@@ -29,7 +29,8 @@ RUN mkdir -p ${BUILD_HOME}/tmp && \
       http://cdn.sencha.com/cmd/${SENCHA_CMD_VERSION}/no-jre/SenchaCmd-${SENCHA_CMD_VERSION}-linux-amd64.sh.zip && \
     unzip ${BUILD_HOME}/tmp/sencha.sh.zip -d ${BUILD_HOME}/tmp && \
     sh  ${BUILD_HOME}/tmp/SenchaCmd-${SENCHA_CMD_VERSION}*-linux-amd64.sh -q && \
-    rm -rf ${BUILD_HOME}/tmp
+    rm -rf ${BUILD_HOME}/tmp && \
+    chmod a+rw -R /build_home/bin/Sencha
 
 ENTRYPOINT ["/build_home/bin/Sencha/Cmd/sencha"]
 
